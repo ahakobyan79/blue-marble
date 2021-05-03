@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hellofx.MarbleController">
+   <children>
+      <Text layoutX="148.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select a date prior to June 2018" wrappingWidth="428.611328125">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Text>
+      <Button fx:id="button" layoutX="351.0" layoutY="64.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="42.0" prefWidth="210.0" text="GO FETCH !">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Button>
+      <ImageView fitHeight="129.0" fitWidth="136.0" layoutX="9.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@hellofx/marble.gif" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="datePicker" layoutX="151.0" layoutY="63.0" onAction="#dateSelected" prefHeight="42.0" prefWidth="191.0" promptText="Select date up to June 2018" />
+      <ImageView fx:id="display" fitHeight="592.0" fitWidth="595.0" layoutX="-6.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="bwButton" layoutX="351.0" layoutY="111.0" mnemonicParsing="false" onAction="#blackAndWhite" text="Black &amp; White" />
+      <Button fx:id="enhancedBtn" layoutX="450.0" layoutY="111.0" mnemonicParsing="false" onAction="#makeEnhanced" text="Enhanced Version" />
+   </children>
 </AnchorPane>

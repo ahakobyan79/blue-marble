@@ -1,3 +1,4 @@
+package hellofx;
 
 
 import java.io.IOException;
@@ -33,6 +34,7 @@ public class BlueMarble {
 
 			URL url = new URL("https://api.nasa.gov/EPIC/archive/" + quality + "/" + dateAsString.replace('-', '/')
 					+ "/png/" + this.nasaImageName + ".png?api_key=" + API_KEY);
+			System.out.println(url); // added to see the actual URL
 			return url.openStream();
 
 		} catch (Exception e) {
@@ -55,7 +57,15 @@ public class BlueMarble {
 		return this.caption;
 	}
 
-	public void setEnhanced(boolean b) {
-		this.quality = "enhanced";
+	public void setEnhanced(boolean b) { // I had to edit this method in order to be able to go back to "natural" after enhancing.
+		if(b)
+			this.quality = "enhanced";
+		else
+			this.quality = "natural";
+	}
+	
+	// Added this method to monitor the work of enhancement
+	public String getQuality() {
+		return this.quality.toString();
 	}
 }
